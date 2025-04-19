@@ -18,11 +18,9 @@ export const useWeatherStore = defineStore('weather', {
       this.isLoading = true;
       this.error = null;
       try {
-        // Вставить сюда API-ключ из https://www.weatherapi.com/
-        // или из https://openweathermap.org/
         const API_KEY = '';
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}&lang=ru`
+          `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&lang=ru`
         );
 
         this.weatherData = response.data;

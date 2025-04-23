@@ -18,7 +18,7 @@ export const useWeatherStore = defineStore('weather', {
       this.isLoading = true;
       this.error = null;
       try {
-        const API_KEY = '';
+        const API_KEY = import.meta.env.VITE_APP_WEATHER_API_KEY;
         const response = await axios.get(
           `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&lang=ru`
         );

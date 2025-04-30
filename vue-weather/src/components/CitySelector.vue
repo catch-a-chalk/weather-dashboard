@@ -43,4 +43,9 @@ const fetchWeather = () => {
     weatherStore.fetchWeather(selectedCity.value);
   }
 }
+
+onMounted(() => {
+  selectedCity.value = cities[0];
+  weatherStore.fetchWeather(selectedCity.value);
+})
 </script>

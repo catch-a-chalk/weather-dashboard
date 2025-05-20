@@ -49,3 +49,36 @@ onMounted(() => {
   weatherStore.fetchWeather(selectedCity.value);
 })
 </script>
+
+<style scoped lang="scss">
+
+.city-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.city-selector__select {
+  padding: 8px 12px;
+  border: 1px solid colors.$very-light-grey;
+  border-radius: 4px;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+.city-selector__button {
+  padding: 8px 16px;
+  background-color: colors.$medium-sea-green;
+  color: colors.$gainsboro;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.city-selector__button:disabled {
+  background-color: colors.$very-light-grey;
+  cursor: not-allowed;
+}
+</style>

@@ -1,14 +1,13 @@
 <template>
   <div class="app">
-    <h1>Погода в России</h1>
+    <default-header/>
     <router-view/>
   </div>
 </template>
 
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+import DefaultHeader from './layouts/DefaultHeader.vue';
 </script>
-
 
 <style lang="scss">
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>HomeView</h1>
+    <h2>Прогноз погоды с детальной информацией по крупнейшим городам России.</h2>
     <CitySelector/>
     <WeatherDisplay v-if="weatherStore.weatherData"/>
     <Loader v-if="weatherStore.isLoading"/>
@@ -17,3 +17,9 @@ import ErrorDisplay from '../components/ErrorDisplay.vue';
 
 const weatherStore = useWeatherStore();
 </script>
+
+<style scoped>
+h2 {
+  text-align: center;
+}
+</style>

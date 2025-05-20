@@ -32,3 +32,38 @@ const capitalizeFirstLetter = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 </script>
+
+<style scoped lang="scss">
+
+.weather-display {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: colors.$whitesmoke;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.temperature {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-details {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.error {
+  color: colors.$red;
+  margin-top: 20px;
+}
+</style>

@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router/index.js'
 import axios from 'axios'
+import '@/assets/scss/app.scss';
 
 const app = createApp(App);
 app.use(createPinia());

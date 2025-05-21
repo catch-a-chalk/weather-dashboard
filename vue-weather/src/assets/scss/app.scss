@@ -1,4 +1,4 @@
 @use "./ds-system/ds" as *;
+@forward "./ds-system/ds";
 @use "./libs/normalize" as *;
 @use "./scaffolding" as *;
-@use "./visually-hidden" as *;

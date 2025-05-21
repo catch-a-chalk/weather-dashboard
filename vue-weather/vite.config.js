@@ -15,7 +15,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @use "@/assets/scss/ds-system/ds-colors.scss" as colors;
+          @use "@/assets/scss/ds-system/ds-colors.scss" as *;
         `,
       },
     },

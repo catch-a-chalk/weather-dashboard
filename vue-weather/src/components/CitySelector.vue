@@ -61,7 +61,7 @@ onMounted(() => {
 
 .city-selector__select {
   padding: 8px 12px;
-  border: 1px solid colors.$very-light-grey;
+  border: 1px solid $very-light-grey;
   border-radius: 4px;
   font-size: 16px;
   min-width: 200px;
@@ -69,8 +69,8 @@ onMounted(() => {
 
 .city-selector__button {
   padding: 8px 16px;
-  background-color: colors.$medium-sea-green;
-  color: colors.$gainsboro;
+  background-color: $medium-sea-green;
+  color: $gainsboro;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -78,7 +78,7 @@ onMounted(() => {
 }
 
 .city-selector__button:disabled {
-  background-color: colors.$very-light-grey;
+  background-color: $very-light-grey;
   cursor: not-allowed;
 }
 </style>

@@ -1,4 +1,4 @@
-@use "./ds-system/ds-colors" as colors;
+@use './ds-system/ds-colors.scss' as colors;
 
 body {
   display: flex;
@@ -7,6 +7,7 @@ body {
   min-width: 960px;
   min-height: 100vh;
 
+  font-family: 'Inter', sans-serif;
   color: colors.$black;
   background-color: colors.$gainsboro;
 

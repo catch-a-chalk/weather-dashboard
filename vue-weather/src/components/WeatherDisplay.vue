@@ -5,6 +5,7 @@
       <img
         :src="weatherData.current.condition.icon"
         :alt="weatherData.current.condition.text"
+        class="weather-icon"
       >
       <p class="temperature"> {{ Math.round(weatherData.current.temp_c) }}°C</p>
     </div>
@@ -12,7 +13,7 @@
       {{ capitalizeFirstLetter(weatherData.current.condition.text) }}
     </p>
     <div class="weather-details">
-      <p>Местное время: {{ weatherData.location.localtime }}</p>
+      <p>Местное время: {{ formatLocalTime(weatherData.location.localtime) }}</p>
       <p>Ощущается как: {{ Math.round(weatherData.current.feelslike_c) }}°C</p>
       <p>Влажность: {{ weatherData.current.humidity }}%</p>
       <p>Ветер: {{ weatherData.current.wind_kph }} км/ч</p>
@@ -27,21 +28,29 @@
   <div v-else>Выберите город из списка</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useWeatherStore } from '../stores/weatherStore';
-import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
 
 const weatherStore = useWeatherStore();
 const { weatherData, isLoading, error } = storeToRefs(weatherStore);
 const { fetchWeather } = weatherStore;
 
-const capitalizeFirstLetter = (str) => {
+const capitalizeFirstLetter = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const formatLocalTime = (timeString: string): string => {
+  try {
+    const time = new Date(timeString);
+    return time.toLocaleDateString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+  } catch {
+    return timeString;
+  }
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 .weather-display {
   margin-top: 20px;
@@ -74,5 +83,11 @@ const capitalizeFirstLetter = (str) => {
 .error {
   color: $red;
   margin-top: 20px;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
 }
 </style>

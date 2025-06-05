@@ -14,7 +14,7 @@ defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .loader {
   display: flex;
   flex-direction: column;
